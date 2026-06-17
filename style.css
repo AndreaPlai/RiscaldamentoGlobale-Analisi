@@ -1,0 +1,198 @@
+* {
+    font-family: Helvetica !important;
+    color: rgb(42, 42, 42);
+}
+
+button {
+    border-radius: 7px;
+    border-style: solid;
+}
+
+h2, h3 {
+    padding-bottom: 5px;
+}
+
+p {
+    padding-bottom: 5px;
+}
+
+li {
+    padding: 5px;
+}
+
+ul > ul > li {
+    list-style-type: circle;
+}
+
+.reveal .slide-number {
+    margin-right: 120px;
+    margin-bottom: 40px;
+    font-size: 24pt;
+    background: rgba(211, 211, 211, 0.699);
+    border-radius: 7px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#range {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 24px;
+    background: #D3D3D3;
+    border-radius: 7px;
+}
+
+#img {
+    margin-top: 10px;
+    margin-bottom: 0px !important;
+    width: 80%;
+    border-radius: 7px;
+}
+
+.conclusion-panel {
+    border: 1px solid #d9e2ec;
+    border-radius: 16px;
+    padding: 22px 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.conclusion-panel h2 {
+    margin: 0 0 10px 0;
+    color: #1f2937;
+    font-size: 1.6em;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 8px;
+    letter-spacing: 0.2px;
+}
+
+.conclusion-panel > p {
+    margin: 0 0 18px 0;
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 0.98em;
+}
+
+.conclusion-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.conclusion-item {
+    padding: 16px 18px;
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.conclusion-item p {
+    margin: 0;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+.conclusion-item--blue {
+    border-left: 5px solid #2563eb;
+}
+
+.conclusion-item--teal {
+    border-left: 5px solid #0f766e;
+}
+
+.conclusion-item--amber {
+    border-left: 5px solid #d97706;
+}
+
+.conclusion-item--violet {
+    border-left: 5px solid #7c3aed;
+}
+
+/* CSS dalle celle Jupyter - RiscaldamentoGlobale.ipynb Cella 1 */
+/* Blocca gli overflow globalmente per evitare scroll */
+html, body, .reveal, .reveal .slides {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* Grafici e contenuti adattabili */
+.plotly-graph-div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: auto !important;
+    max-height: 60vh;
+}
+
+/* Card e pannelli: wrapping e limiti */
+.slide-content, .card {
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.conclusion-panel {
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.conclusion-panel .conclusion-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+div[style*='border-left:5px solid'] {
+    box-sizing: border-box;
+}
+
+/* Riduzioni responsive per evitare overflow su schermi piccoli */
+@media (max-width: 1200px) {
+    .slide-content, .card, .conclusion-panel {
+        padding: 10px;
+        font-size: 0.95em;
+        max-width: 92vw;
+    }
+    h1, h2, h3, h4 {
+        font-size: 1.1em;
+    }
+    .plotly-graph-div {
+        max-width: 92vw;
+        max-height: 55vh;
+    }
+}
+
+/* Se l'altezza della viewport è limitata, scala leggermente per far stare tutto senza scroll */
+@media (max-height: 700px) {
+    .slide-content, .card, .conclusion-panel {
+        transform: scale(0.92);
+        transform-origin: top center;
+    }
+}
+
+/* Immagini, iframe e tabelle non devono sforare */
+.slide-content img, .slide-content iframe, .slide-content table {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
